@@ -58,6 +58,14 @@ p, a, h1, h2, h3{
     color: var(--text-main);
 }
 
+h1{
+    font-size: 1vw;
+}
+
+h2{
+    font-size: 1.2vw;
+}
+
 button{
     align-items: center;
     justify-content: center;
@@ -85,10 +93,16 @@ button:hover{
     padding: 1vh;
     display: flex;
     height: 60px;
+    width: 100%;
     align-items: center;
     justify-content: center;
     /* background: red; */
     background: var(--bg-surface);
+
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    z-index: 2000;
 }
 
 .header .topbar{
@@ -99,6 +113,8 @@ button:hover{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    /* background: red; */
 }
 
 .header .topbar img{
@@ -106,7 +122,7 @@ button:hover{
 }
 
 .header .topbar .topbar-left{
-    
+
 }
 
 .header .topbar .topbar-mid{
@@ -132,77 +148,87 @@ button:hover{
     color: var(--text-main);
 }
 
-.content{
-    height: auto;
+.upa{
     padding: 1vh;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.upa-members .img-holder{
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1/1;
+}
+
+.upa-members .img-holder img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+#proactmem .img-holder{
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 1/1;
+}
+
+#proactmem .img-holder img{
 
 }
 
-.content .content-holder{
-    background: var(--bg-surface);
-    border-radius: 10px;
-
-    height: auto;
+.upa-members .content-holder{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-.content .content-holder .idv-content{
+.upa-members #panel-members{ 
+    margin-top: 9vh;
+}
+
+.upa-members .content-holder .idv-content{
+    /* background: red; */
+    height: auto;
+    max-width: 22vw;
+
+    background: var(--bg-surface);
     margin: 1vh;
     padding: 1vh;
 
-    height: auto;
-    width: 50vw;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
 
-.content .content-holder img{
     border-radius: 20px;
-    height: 20vw;
+
 }
 
-.content .content-holder .idv-content p{
-    margin: 10px;
+.upa-members #panel-members .idv-content, #panel-members-2 .idv-content{
+    height: 72vh;
+    width: 22vw;
+}
+
+.upa-members .content-holder .idv-content p{
+    margin: 1vh;
     padding: 0;
     text-align: center;
-    font-size: 12pt;
+    font-size: 0.8vw;
     font-family: var(--font-mono);
+    width: fit-content;
 
     color: var(--text-muted);
 }
 
-.content .content-holder h1{
-    margin: 0;
-    padding: 0;
-    font-size: 36pt;
-}
-
-.content .content-holder h2{
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-size: 28pt;
-}
-
-.content .content-holder button{
+.upa-members .content-holder button{
     color: var(--btn-primary-text);
     background: var(--btn-primary-bg);
 }
 
-.content .content-holder button:hover{
+.upa-members .content-holder button:hover{
     background: var(--btn-primary-hover);
-}
-
-.content .content-left, .content-right{
-    margin: 1vh;
-    height: 90vh;
-    width: 30vw;
-    /* background: green; */
 }

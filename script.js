@@ -10,6 +10,4 @@ document.getElementById("gen_member_count").innerHTML = general_members + "+";
 
 
 
-
-
 // FILE PATH FOR ATTACHMENTS

@@ -44,6 +44,12 @@
   --btn-secondary-glow: rgba(255, 109, 0, 0.3);
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     padding: 0;
     margin: 0;
@@ -51,7 +57,7 @@ body{
 
     font-family: sans-serif;
 
-    background: var(--bg-main);
+    background: var(--bg-main); 
 }
 
 p, a, h1, h2, h3{
@@ -121,10 +127,6 @@ button:hover{
     height: 50px;
 }
 
-.header .topbar .topbar-left{
-
-}
-
 .header .topbar .topbar-mid{
     font-size: 12pt;
     display: flex;
@@ -148,14 +150,8 @@ button:hover{
     color: var(--text-main);
 }
 
-.upa{
-    padding: 1vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
 
+/* ########################################## */
 .upa-members .img-holder{
     width: 100%;
     max-width: 280px;
@@ -173,10 +169,6 @@ button:hover{
     width: 100%;
     max-width: 250px;
     aspect-ratio: 1/1;
-}
-
-#proactmem .img-holder img{
-
 }
 
 .upa-members .content-holder{
@@ -232,3 +224,214 @@ button:hover{
 .upa-members .content-holder button:hover{
     background: var(--btn-primary-hover);
 }
+
+/* ADJUST FOR DIFFERENT SCREEN */
+/* ===== RESPONSIVE ADJUSTMENTS FOR TABLETS AND PHONES ===== */
+/* Tablet styles (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 1.5vw;
+    }
+    
+    h2 {
+        font-size: 1.8vw;
+    }
+    
+    .header .topbar {
+        width: 90vw;
+    }
+    
+    .header .topbar .topbar-mid {
+        width: 40%;
+    }
+    
+    .upa-members .content-holder {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .upa-members .content-holder .idv-content {
+        max-width: 300px;
+        margin: 15px;
+    }
+    
+    .upa-members #panel-members .idv-content, 
+    #panel-members-2 .idv-content {
+        height: auto;
+        min-height: 400px;
+        width: calc(50% - 30px);
+    }
+    
+    .upa-members .content-holder .idv-content p {
+        font-size: 14px;
+        width: 90%;
+    }
+    
+    .upa-members #panel-members { 
+        margin-top: 7vh;
+    }
+}
+
+/* Phone styles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 4vw;
+    }
+    
+    h2 {
+        font-size: 5vw;
+    }
+    
+    button {
+        height: 36px;
+        width: 80px;
+        font-size: 14px;
+    }
+    
+    .header {
+        height: 55px;
+    }
+    
+    .header .topbar {
+        width: 95vw;
+    }
+    
+    .header .topbar img {
+        height: 40px;
+    }
+    
+    .header .topbar .topbar-mid {
+        display: none; /* Hide mid menu on mobile - you might want a hamburger menu */
+    }
+    
+    .header .topbar .topbar-right button {
+        width: auto;
+        padding: 0 15px;
+        font-size: 14px;
+    }
+    
+    .upa-members .img-holder {
+        max-width: 220px;
+    }
+    
+    #proactmem .img-holder {
+        max-width: 200px;
+    }
+    
+    .upa-members .content-holder {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .upa-members .content-holder .idv-content {
+        max-width: 90%;
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px;
+    }
+    
+    .upa-members #panel-members .idv-content, 
+    #panel-members-2 .idv-content {
+        height: auto;
+        min-height: 350px;
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .upa-members .content-holder .idv-content p {
+        font-size: 14px;
+        width: 100%;
+        margin: 8px 0;
+    }
+    
+    .upa-members #panel-members { 
+        margin-top: 5vh;
+    }
+    
+    .upa-members .content-holder button {
+        width: 100%;
+        max-width: 200px;
+        padding: 12px 20px;
+        height: 45px;
+    }
+}
+
+/* Small phone styles (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 5vw;
+    }
+    
+    h2 {
+        font-size: 6vw;
+    }
+    
+    .header {
+        height: 50px;
+    }
+    
+    .header .topbar img {
+        height: 35px;
+    }
+    
+    .header .topbar .topbar-right button {
+        padding: 0 12px;
+        font-size: 13px;
+        height: 32px;
+    }
+    
+    .upa-members .img-holder {
+        max-width: 180px;
+    }
+    
+    #proactmem .img-holder {
+        max-width: 160px;
+    }
+    
+    .upa-members #panel-members .idv-content, 
+    #panel-members-2 .idv-content {
+        min-height: 320px;
+        padding: 15px 10px;
+    }
+    
+    .upa-members .content-holder .idv-content p {
+        font-size: 13px;
+    }
+    
+    .upa-members .content-holder button {
+        max-width: 160px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+
+/* Landscape phone styles (max-height: 480px and orientation landscape) */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .header {
+        height: 45px;
+    }
+    
+    .header .topbar img {
+        height: 30px;
+    }
+    
+    .upa-members #panel-members { 
+        margin-top: 6vh;
+    }
+    
+    .upa-members .content-holder {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .upa-members #panel-members .idv-content, 
+    #panel-members-2 .idv-content {
+        min-height: 250px;
+        width: calc(33.33% - 20px);
+    }
+    
+    .upa-members .img-holder {
+        max-width: 150px;
+    }
+}
+

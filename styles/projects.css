@@ -50,10 +50,6 @@
     box-sizing: border-box;
 }
 
-#active-page{
-    color: var(--brand-secondary);
-}
-
 body{
     padding: 0;
     margin: 0;
@@ -68,12 +64,17 @@ p, a, h1, h2, h3{
     color: var(--text-main);
 }
 
+
+h2{
+    font-size: 1.2vw;
+}
+
 button{
     align-items: center;
     justify-content: center;
     height: 40px;
     width: 90px;
- 
+
     color: var(--btn-primary-text);
 
     border: none;
@@ -104,11 +105,10 @@ button:hover{
     margin-top: 0;
     top: 0;
     z-index: 2000;
-
-    /* background: red; */
 }
 
 .header .topbar{
+    /* background: green; */
     height: 45px;
     width: 80vw;
     display: flex;
@@ -116,16 +116,16 @@ button:hover{
     align-items: center;
     justify-content: space-between;
 
-    /* background: green; */
+    /* background: red; */
 }
 
 .header .topbar img{
     height: 50px;
 }
 
-.header .topbar .topbar-left{
-    
-}
+/* .header .topbar .topbar-left{
+
+} */
 
 .header .topbar .topbar-mid{
     font-size: 12pt;
@@ -150,85 +150,77 @@ button:hover{
     color: var(--text-main);
 }
 
-.content{
-    padding: 1vh;
+/* ################################################# */
+
+.upa-members{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-.content .content-holder{
-    /* background: black; */
+.upa-members .img-holder{
+    width: 100%;
+    max-width: 22vw;
+    aspect-ratio: 1/1;
 
-    height: 60vh;
-    width: 50vw;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto auto;
 }
 
-.content .content-holder .member-count{
-    margin: 1vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1vw;
-}
-
-.content .content-holder .member-count .member-type{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 17vw;
-    height: 13vh;
-    background: var(--border-dim);
+.upa-members .img-holder img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
     border-radius: 20px;
 }
 
-.content .content-holder img{
-    height: 8vw;
+
+.upa-members .content-holder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.content .content-holder p{
-    margin: 10px;
+.upa-members #panel-members{ 
+    margin-top: 9vh;
+}
+
+.upa-members .content-holder .idv-content{
+    width: 42vw;
+    max-width: 56vw;
+    height: 62vh;
+
+    background: var(--bg-surface);
+    margin: 1vh;
+    padding: 1vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+    /* background: red; */
+}
+
+.upa-members .content-holder .idv-content p{ 
+    margin: 1vh;
     padding: 0;
     text-align: center;
-    font-size: 12pt;
+    font-size: 0.8vw;
     font-family: var(--font-mono);
+    width: fit-content;
 
     color: var(--text-muted);
 }
 
-.content .content-holder h2{
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    font-size: 28pt;
-}
-
-.content .content-holder h3{
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    font-size: 48pt;
-}
-
-.content .content-holder .content-btn button{
+.upa-members .content-holder button{
     color: var(--btn-primary-text);
     background: var(--btn-primary-bg);
 }
 
-.content .content-holder .content-btn button:hover{
+.upa-members .content-holder button:hover{
     background: var(--btn-primary-hover);
-}
-
-.content .content-left, .content-right{
-    margin: 1vh;
-    height: 90vh;
-    width: 30vw;
-    /* background: green; */
 }

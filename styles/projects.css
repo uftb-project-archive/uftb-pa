@@ -60,6 +60,14 @@ body{
     background: var(--bg-main);
 }
 
+#active-page{
+    color: var(--brand-secondary);
+}
+
+#sidebar-toggle-btn{
+    display: none;
+}
+
 p, a, h1, h2, h3{
     color: var(--text-main);
 }
@@ -151,7 +159,6 @@ button:hover{
 }
 
 /* ################################################# */
-
 .upa-members{
     display: flex;
     justify-content: center;
@@ -223,4 +230,126 @@ button:hover{
 
 .upa-members .content-holder button:hover{
     background: var(--btn-primary-hover);
+}
+
+@media (max-width: 650px){
+
+   #sidebar-toggle-btn{
+        display: flex;
+    }
+
+    .header{
+        height: auto;
+        width: 100%;
+    }
+
+    .header .topbar{
+        height: auto;
+        /* background: green; */
+    }
+
+    .header .topbar img{
+        height: 40px;
+    }
+
+    .header .topbar .topbar-mid{
+        font-size: 12pt;
+        display: flex;
+        flex-direction: column;
+        gap: 8vh;
+
+        background: var(--border-dim);
+    }
+
+
+    .header .topbar .topbar-mid{
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        height: 120vw;
+        width: 50vw;
+        justify-content: center;
+        align-items: center;
+        transition: 0.75s ease-out;
+
+        transition: right 0.3s ease-out;
+    }
+
+    .header .topbar .topbar-mid.show{
+        right: 0;
+    }
+
+    .rotate{
+        transform: translateY(20px);
+    }
+    
+
+    /* ###################### */
+
+    .upa-members{
+        flex-direction: column;
+    }
+
+    .upa-members .img-holder{
+        width: 100%;
+        max-width: 300px;
+        aspect-ratio: 1/1;
+
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: auto auto;
+    }
+
+    .upa-members .img-holder img{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+
+    .upa-members .content-holder{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: 90vw;
+
+    }
+
+    .upa-members .content-holder .idv-content{
+        width: 100%;
+        max-width: 100%;
+        height: 62vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 20px;
+    }
+
+    .upa-members .content-holder .idv-content p{ 
+        margin: 1vh;
+        padding: 0;
+        text-align: center;
+        font-size: 12pt;
+        font-family: var(--font-mono);
+        width: fit-content;
+
+        color: var(--text-muted);
+    }
+
+    .upa-members .content-holder .idv-content h2{
+        font-size: 18pt;
+    }
+
+    .upa-members .content-holder .idv-content .content-btn button{
+        font-size: 8pt;
+    }
+
 }

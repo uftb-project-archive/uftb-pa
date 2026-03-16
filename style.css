@@ -50,10 +50,6 @@
     box-sizing: border-box;
 }
 
-#active-page{
-    color: var(--brand-secondary);
-}
-
 body{
     padding: 0;
     margin: 0;
@@ -62,6 +58,14 @@ body{
     font-family: sans-serif;
 
     background: var(--bg-main);
+}
+
+#active-page{
+    color: var(--brand-secondary);
+}
+
+#sidebar-toggle-btn{
+    display: none;
 }
 
 p, a, h1, h2, h3{
@@ -150,6 +154,8 @@ button:hover{
     color: var(--text-main);
 }
 
+
+/* #################################### */
 .content{
     padding: 1vh;
     display: flex;
@@ -231,4 +237,100 @@ button:hover{
     height: 90vh;
     width: 30vw;
     /* background: green; */
+}
+
+
+@media (max-width: 650px){
+
+    #sidebar-toggle-btn{
+        display: flex;
+    }
+
+    .header{
+        height: auto;
+        width: 100%;
+    }
+
+    .header .topbar{
+        height: auto;
+        /* background: green; */
+    }
+
+    .header .topbar img{
+        height: 40px;
+    }
+
+    .header .topbar .topbar-mid{
+        font-size: 12pt;
+        display: flex;
+        flex-direction: column;
+        gap: 8vh;
+
+        background: var(--border-dim);
+    }
+
+    .header .topbar .topbar-mid{
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        height: 120vw;
+        width: 50vw;
+        justify-content: center;
+        align-items: center;
+        transition: 0.75s ease-out;
+
+        transition: right 0.3s ease-out;
+    }
+
+    .header .topbar .topbar-mid.show{
+        right: 0;
+    }
+
+    .rotate{
+        transform: translateY(20px);
+    }
+    
+    /* ####################################### */
+    .content{
+        padding: 1vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* background: red; */
+    }
+
+    .content .content-holder{
+        /* background: black; */
+
+        height: 70vh;
+        width: 90vw;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content .content-holder .member-count{
+        gap: 2vw;
+    }
+
+    .content .content-holder img{
+        height: 8vw;
+    }
+
+    .content .content-holder p{
+        font-size: 8pt;
+    }
+
+    .content .content-holder h2{
+        font-size: 12pt;
+    }
+
+    .content .content-holder h3{
+        font-size: 14pt;
+    }
 }

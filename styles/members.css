@@ -57,19 +57,19 @@ body{
 
     font-family: sans-serif;
 
-    background: var(--bg-main); 
+    background: var(--bg-main);
+}
+
+#active-page{
+    color: var(--brand-secondary);
+}
+
+#sidebar-toggle-btn{
+    display: none; 
 }
 
 p, a, h1, h2, h3{
     color: var(--text-main);
-}
-
-h1{
-    font-size: 1vw;
-}
-
-h2{
-    font-size: 1.2vw;
 }
 
 button{
@@ -77,7 +77,7 @@ button{
     justify-content: center;
     height: 40px;
     width: 90px;
-
+ 
     color: var(--btn-primary-text);
 
     border: none;
@@ -102,17 +102,17 @@ button:hover{
     width: 100%;
     align-items: center;
     justify-content: center;
-    /* background: red; */
     background: var(--bg-surface);
 
     position: fixed;
     margin-top: 0;
     top: 0;
     z-index: 2000;
+
+    /* background: red; */
 }
 
 .header .topbar{
-    /* background: green; */
     height: 45px;
     width: 80vw;
     display: flex;
@@ -120,11 +120,15 @@ button:hover{
     align-items: center;
     justify-content: space-between;
 
-    /* background: red; */
+    /* background: green; */
 }
 
 .header .topbar img{
     height: 50px;
+}
+
+.header .topbar .topbar-left{
+    
 }
 
 .header .topbar .topbar-mid{
@@ -200,9 +204,15 @@ button:hover{
 
 }
 
-.upa-members #panel-members .idv-content, #panel-members-2 .idv-content{
-    height: 72vh;
-    width: 22vw;
+/* DESIGNATION */
+.upa-members .content-holder .idv-content h1{
+    font-size: 16pt;
+    color: var(--brand-secondary);
+}
+
+/* NAME */
+.upa-members .content-holder .idv-content h2{
+    font-size: 18pt;
 }
 
 .upa-members .content-holder .idv-content p{
@@ -216,6 +226,11 @@ button:hover{
     color: var(--text-muted);
 }
 
+.upa-members #panel-members .idv-content, #panel-members-2 .idv-content{
+    height: 72vh;
+    width: 22vw;
+}
+
 .upa-members .content-holder button{
     color: var(--btn-primary-text);
     background: var(--btn-primary-bg);
@@ -225,213 +240,95 @@ button:hover{
     background: var(--btn-primary-hover);
 }
 
-/* ADJUST FOR DIFFERENT SCREEN */
-/* ===== RESPONSIVE ADJUSTMENTS FOR TABLETS AND PHONES ===== */
-/* Tablet styles (max-width: 1024px) */
-@media screen and (max-width: 1024px) {
-    h1 {
-        font-size: 1.5vw;
-    }
-    
-    h2 {
-        font-size: 1.8vw;
-    }
-    
-    .header .topbar {
-        width: 90vw;
-    }
-    
-    .header .topbar .topbar-mid {
-        width: 40%;
-    }
-    
-    .upa-members .content-holder {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-    
-    .upa-members .content-holder .idv-content {
-        max-width: 300px;
-        margin: 15px;
-    }
-    
-    .upa-members #panel-members .idv-content, 
-    #panel-members-2 .idv-content {
-        height: auto;
-        min-height: 400px;
-        width: calc(50% - 30px);
-    }
-    
-    .upa-members .content-holder .idv-content p {
-        font-size: 14px;
-        width: 90%;
-    }
-    
-    .upa-members #panel-members { 
-        margin-top: 7vh;
-    }
-}
 
-/* Phone styles (max-width: 768px) */
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 4vw;
+@media (max-width: 650px){
+
+
+    #sidebar-toggle-btn{
+        display: flex;
     }
-    
-    h2 {
-        font-size: 5vw;
+
+    .header{
+        height: auto;
+        width: 100%;
     }
-    
-    button {
-        height: 36px;
-        width: 80px;
-        font-size: 14px;
+
+    .header .topbar{
+        height: auto;
+        /* background: green; */
     }
-    
-    .header {
-        height: 55px;
-    }
-    
-    .header .topbar {
-        width: 95vw;
-    }
-    
-    .header .topbar img {
+
+    .header .topbar img{
         height: 40px;
     }
-    
-    .header .topbar .topbar-mid {
-        display: none; /* Hide mid menu on mobile - you might want a hamburger menu */
+
+    .header .topbar .topbar-mid{
+        font-size: 12pt;
+        display: flex;
+        flex-direction: column;
+        gap: 8vh;
+
+        background: var(--border-dim);
     }
-    
-    .header .topbar .topbar-right button {
-        width: auto;
-        padding: 0 15px;
-        font-size: 14px;
+
+
+    .header .topbar .topbar-mid{
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        height: 120vw;
+        width: 50vw;
+        justify-content: center;
+        align-items: center;
+        transition: 0.75s ease-out;
+
+        transition: right 0.3s ease-out;
     }
-    
-    .upa-members .img-holder {
+
+    .header .topbar .topbar-mid.show{
+        right: 0;
+    }
+
+    .rotate{
+        transform: translateY(20px);
+    }
+
+    /* ######################### */
+
+    .upa-members .img-holder{
         max-width: 220px;
     }
-    
-    #proactmem .img-holder {
-        max-width: 200px;
-    }
-    
-    .upa-members .content-holder {
+
+    .upa-members .content-holder{
         flex-direction: column;
-        padding: 10px;
     }
-    
-    .upa-members .content-holder .idv-content {
-        max-width: 90%;
-        width: 100%;
-        margin: 10px 0;
-        padding: 15px;
-    }
-    
-    .upa-members #panel-members .idv-content, 
-    #panel-members-2 .idv-content {
+
+    .upa-members #panel-members .idv-content,
+    .upa-members #panel-members-2 .idv-content, #proactmem .idv-content{
+        width: 90vw;
+        max-width: none;
+        min-width: 90vw;
+
         height: auto;
-        min-height: 350px;
-        width: 100%;
-        max-width: 350px;
+
+        gap: 1vh;
     }
-    
-    .upa-members .content-holder .idv-content p {
-        font-size: 14px;
-        width: 100%;
-        margin: 8px 0;
+
+    h1{
+        font-size: 12pt;
     }
-    
-    .upa-members #panel-members { 
-        margin-top: 5vh;
+
+    h2{
+        font-size: 14pt;
     }
-    
-    .upa-members .content-holder button {
-        width: 100%;
-        max-width: 200px;
-        padding: 12px 20px;
-        height: 45px;
+
+    p{
+        display: none;
+    }
+
+    .upa-members .content-holder .idv-content .content-btn button{
+        font-size: 8pt;
     }
 }
-
-/* Small phone styles (max-width: 480px) */
-@media screen and (max-width: 480px) {
-    h1 {
-        font-size: 5vw;
-    }
-    
-    h2 {
-        font-size: 6vw;
-    }
-    
-    .header {
-        height: 50px;
-    }
-    
-    .header .topbar img {
-        height: 35px;
-    }
-    
-    .header .topbar .topbar-right button {
-        padding: 0 12px;
-        font-size: 13px;
-        height: 32px;
-    }
-    
-    .upa-members .img-holder {
-        max-width: 180px;
-    }
-    
-    #proactmem .img-holder {
-        max-width: 160px;
-    }
-    
-    .upa-members #panel-members .idv-content, 
-    #panel-members-2 .idv-content {
-        min-height: 320px;
-        padding: 15px 10px;
-    }
-    
-    .upa-members .content-holder .idv-content p {
-        font-size: 13px;
-    }
-    
-    .upa-members .content-holder button {
-        max-width: 160px;
-        height: 40px;
-        font-size: 14px;
-    }
-}
-
-/* Landscape phone styles (max-height: 480px and orientation landscape) */
-@media screen and (max-height: 480px) and (orientation: landscape) {
-    .header {
-        height: 45px;
-    }
-    
-    .header .topbar img {
-        height: 30px;
-    }
-    
-    .upa-members #panel-members { 
-        margin-top: 6vh;
-    }
-    
-    .upa-members .content-holder {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    
-    .upa-members #panel-members .idv-content, 
-    #panel-members-2 .idv-content {
-        min-height: 250px;
-        width: calc(33.33% - 20px);
-    }
-    
-    .upa-members .img-holder {
-        max-width: 150px;
-    }
-}
-

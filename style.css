@@ -185,6 +185,21 @@ button:hover{
     justify-content: center;
 }
 
+.content .content-holder #ire-link{
+    text-decoration: none;
+    
+}
+
+.content .content-holder #ire-link p{
+    transition: ease-in-out 0.3s;
+}
+
+.content .content-holder #ire-link p:hover{
+    text-decoration: underline;
+    scale: 1.02;
+    color: var(--brand-secondary);
+}
+
 .content .content-holder .content-card{
     margin: 1vh;
     display: flex;
@@ -273,6 +288,41 @@ button:hover{
     color: hsl(210, 75%, 42%);
 }
 
+.footer{
+    background: var(--card-bg);
+
+    width: 100%;
+    padding: 10px;
+
+    position: fixed;
+    margin-top: 0;
+    bottom: 0;
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer a{
+    text-decoration: none;
+
+    transition: ease-in-out 0.3s;
+}
+
+.footer a:hover{
+    scale: 1.05;
+}
+
+.footer p{
+    font-size: 7pt;
+    opacity: 0.3;
+}
+
+.footer p:hover{
+    color: var(--brand-primary);
+}
+
 
 @media (max-width: 650px){
 
@@ -309,7 +359,7 @@ button:hover{
         top: 0;
         right: -100%;
 
-        height: 120vw;
+        height: 150vw;
         width: 50vw;
         justify-content: center;
         align-items: center;

@@ -5,14 +5,14 @@
   --brand-accent: #7000ff;        /* Deep Purple (AI / Processing) */
 
   /* --- Functional Backgrounds --- */
-  --bg-main: #0b0e14;             /* Carbon Black (Main background) */
-  --bg-surface: #161b22;          /* Slate Gray (Cards / Sections) */
-  --bg-input: #1f242c;            /* Subtle dark for form fields */
+  --bg-main: hsl(220, 30%, 3%);             /* Carbon Black (Main background) */
+  --bg-surface: hsl(215, 21%, 6%);          /* Slate Gray (Cards / Sections) */
+  --bg-input: hsl(217, 17%, 12%);            /* Subtle dark for form fields */
 
   /* --- Typography / Text --- */
   --text-main: #e6edf3;           /* Off-White (Primary text) */
   --text-muted: #8b949e;          /* Dimmed Gray (Metadata / Labels) */
-  --text-inverse: #000000;        /* Black (For use on bright accents) */
+  --text-inverse: #000000;        /* Black (For use on bright accents) */ 
 
   /* --- Interface States --- */
   --status-online: #39d353;       /* Bot/Sensor Active */
@@ -20,7 +20,7 @@
   --status-warning: #e3b341;      /* System Maintenance */
 
   /* --- Borders & Accents --- */
-  --border-dim: #30363d;          /* Subtle structural lines */
+  --card-bg: hsl(212, 12%, 21%, 0.5);          /* Subtle structural lines */
   --glow-primary: rgba(0, 229, 255, 0.3); /* Neon glow effect */
 
   /* --- Design Tokens --- */
@@ -42,6 +42,8 @@
   --btn-secondary-hover: #e65100; /* Darker Orange */
   --btn-secondary-active: #bf360c; /* Deep Orange */
   --btn-secondary-glow: rgba(255, 109, 0, 0.3);
+
+  --bg-image: url(../assets/website/background.jpg);
 }
 
 *{
@@ -57,7 +59,12 @@ body{
 
     font-family: sans-serif;
 
-    background: var(--bg-main);
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: screen;
 }
 
 #active-page{
@@ -159,13 +166,13 @@ button:hover{
 }
 
 /* ################################################# */
-.upa-members{
+.content{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.upa-members .img-holder{
+.content .img-holder{
     width: 100%;
     max-width: 22vw;
     aspect-ratio: 1/1;
@@ -175,7 +182,7 @@ button:hover{
     grid-template-columns: auto auto;
 }
 
-.upa-members .img-holder img{
+.content .img-holder img{
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -183,23 +190,23 @@ button:hover{
 }
 
 
-.upa-members .content-holder{
+.content .content-holder{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.upa-members #panel-members{ 
+.content #panel-members{ 
     margin-top: 9vh;
 }
 
-.upa-members .content-holder .idv-content{
+.content .content-holder .idv-content{
     width: 42vw;
     max-width: 56vw;
     height: 62vh;
 
-    background: var(--bg-surface);
+    background: var(--card-bg);
     margin: 1vh;
     padding: 1vh;
 
@@ -207,12 +214,13 @@ button:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 
     border-radius: 20px;
     /* background: red; */
 }
 
-.upa-members .content-holder .idv-content p{ 
+.content .content-holder .idv-content p{ 
     margin: 1vh;
     padding: 0;
     text-align: center;
@@ -223,12 +231,12 @@ button:hover{
     color: var(--text-muted);
 }
 
-.upa-members .content-holder button{
+.content .content-holder button{
     color: var(--btn-primary-text);
     background: var(--btn-primary-bg);
 }
 
-.upa-members .content-holder button:hover{
+.content .content-holder button:hover{
     background: var(--btn-primary-hover);
 }
 
@@ -258,7 +266,7 @@ button:hover{
         flex-direction: column;
         gap: 8vh;
 
-        background: var(--border-dim);
+        background: var(--card-bg);
     }
 
 
@@ -288,11 +296,11 @@ button:hover{
 
     /* ###################### */
 
-    .upa-members{
+    .content{
         flex-direction: column;
     }
 
-    .upa-members .img-holder{
+    .content .img-holder{
         width: 100%;
         max-width: 300px;
         aspect-ratio: 1/1;
@@ -302,7 +310,7 @@ button:hover{
         grid-template-columns: auto auto;
     }
 
-    .upa-members .img-holder img{
+    .content .img-holder img{
         object-fit: cover;
         height: 100%;
         width: 100%;
@@ -310,7 +318,7 @@ button:hover{
     }
 
 
-    .upa-members .content-holder{
+    .content .content-holder{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -320,7 +328,7 @@ button:hover{
 
     }
 
-    .upa-members .content-holder .idv-content{
+    .content .content-holder .idv-content{
         width: 100%;
         max-width: 100%;
         height: 62vh;
@@ -333,7 +341,7 @@ button:hover{
         border-radius: 20px;
     }
 
-    .upa-members .content-holder .idv-content p{ 
+    .content .content-holder .idv-content p{ 
         margin: 1vh;
         padding: 0;
         text-align: center;
@@ -344,11 +352,11 @@ button:hover{
         color: var(--text-muted);
     }
 
-    .upa-members .content-holder .idv-content h2{
+    .content .content-holder .idv-content h2{
         font-size: 18pt;
     }
 
-    .upa-members .content-holder .idv-content .content-btn button{
+    .content .content-holder .idv-content .content-btn button{
         font-size: 8pt;
     }
 

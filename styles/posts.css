@@ -1,0 +1,406 @@
+:root {
+  /* --- Primary Brand Colors --- */
+  --brand-primary: #00e5ff;       /* Electric Cyan (Data flow / Holograms) */
+  --brand-secondary: #ff6d00;     /* Safety Orange (Hardware / Caution) */
+  --brand-accent: #7000ff;        /* Deep Purple (AI / Processing) */
+
+  /* --- Functional Backgrounds --- */
+  --bg-main: hsl(220, 30%, 3%);             /* Carbon Black (Main background) */
+  --bg-surface: hsl(215, 21%, 6%);          /* Slate Gray (Cards / Sections) */
+  --bg-input: hsl(217, 17%, 12%);            /* Subtle dark for form fields */
+
+  /* --- Typography / Text --- */
+  --text-main: #e6edf3;           /* Off-White (Primary text) */
+  --text-muted: #8b949e;          /* Dimmed Gray (Metadata / Labels) */
+  --text-inverse: #000000;        /* Black (For use on bright accents) */ 
+
+  /* --- Interface States --- */
+  --status-online: #39d353;       /* Bot/Sensor Active */
+  --status-offline: #f85149;      /* Error / Connection Lost */
+  --status-warning: #e3b341;      /* System Maintenance */
+
+  /* --- Borders & Accents --- */
+  --card-bg: hsl(212, 12%, 21%, 0.5);          /* Subtle structural lines */
+  --glow-primary: rgba(0, 229, 255, 0.3); /* Neon glow effect */
+
+  /* --- Design Tokens --- */
+  --radius-sm: 4px;               /* Sharp, industrial corners */
+  --radius-md: 8px;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace; /* Engineering feel */
+
+
+  /* --- Button: Primary (Action/Execute) --- */
+  --btn-primary-bg: var(--brand-primary);
+  --btn-primary-text: var(--text-inverse);
+  --btn-primary-hover: #00b8cc;   /* Darker Cyan */
+  --btn-primary-active: #008ba3;  /* Deep Cyan */
+  --btn-primary-glow: rgba(0, 229, 255, 0.4);
+
+  /* --- Button: Secondary (Manual/Override) --- */
+  --btn-secondary-bg: var(--brand-secondary);
+  --btn-secondary-text: var(--text-inverse);
+  --btn-secondary-hover: #e65100; /* Darker Orange */
+  --btn-secondary-active: #bf360c; /* Deep Orange */
+  --btn-secondary-glow: rgba(255, 109, 0, 0.3);
+
+  --bg-image: url(../assets/website/background.jpg);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: sans-serif;
+
+    background: var(--bg-main);
+
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: screen;
+
+}
+
+#active-page{
+    color: var(--brand-secondary);
+}
+
+#sidebar-toggle-btn{
+    display: none;
+}
+
+p, a, h1, h2, h3{
+    color: var(--text-main);
+}
+
+button{
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 90px;
+ 
+    color: var(--btn-primary-text);
+
+    border: none;
+    border-radius: 30px;
+
+    background: var(--btn-secondary-bg);
+
+    transition: ease-in-out 0.1s;
+}
+
+button:hover{
+    scale: 1.05;
+    cursor: pointer;
+
+    background: var(--btn-secondary-hover);
+}
+
+.header{
+    padding: 1vh;
+    display: flex;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-surface);
+
+    position: fixed;
+    margin-top: 0;
+    top: 0;
+    z-index: 2000;
+
+    /* background: red; */
+}
+
+.header .topbar{
+    height: 45px;
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    /* background: green; */
+}
+
+.header .topbar img{
+    height: 50px;
+}
+
+/* .header .topbar .topbar-left{
+    
+} */
+
+.header .topbar .topbar-mid{
+    font-size: 12pt;
+    display: flex;
+    width: 30%;
+    /* background: green; */
+    justify-content: space-between;
+}
+
+.header .topbar .topbar-mid a{
+    color: var(--text-main);
+    text-decoration: none;
+    transition: ease-in-out 0.2s;
+}
+
+.header .topbar .topbar-mid a:hover{
+    scale: 1.05;
+    color: var(--brand-primary);
+}
+
+.header .topbar .topbar-right button{
+    color: var(--text-main);
+}
+
+
+/* #################################### */
+.content{
+    padding: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .content-left, .content-right{
+    margin: 1vh;
+    height: 90vh;
+    width: 30vw;
+    /* background: green; */
+}
+
+/* FOR MEMBER COUNT */
+.content .content-holder .content-card #proact{
+    border: 1px solid hsl(248, 53%, 65%, 0.5);
+}
+
+#proact h3, #proact p{
+    color: hsl(248, 53%, 65%);
+}
+
+.content .content-holder .content-card #act{
+    border: 1px solid hsl(135, 50%, 35%, 0.5);
+}
+
+#act h3, #act p{
+    color: hsl(135, 50%, 35%);
+}
+
+.content .content-holder .content-card #gen{
+    border: 1px solid hsl(210, 75%, 42%, 0.5);
+}
+
+#gen h3, #gen p{
+    color: hsl(210, 75%, 42%);
+}
+
+.footer{
+    background: var(--card-bg);
+
+    width: 100%;
+    padding: 10px;
+
+    position: fixed;
+    margin-top: 0;
+    bottom: 0;
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer a{
+    text-decoration: none;
+
+    transition: ease-in-out 0.3s;
+}
+
+.footer a:hover{
+    scale: 1.05;
+}
+
+.footer p{
+    font-size: 7pt;
+    opacity: 0.3;
+}
+
+.footer p:hover{
+    color: var(--brand-primary);
+}
+
+
+
+/* POST.CSS */
+.content .content-holder{
+    height: auto;
+    width: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .content-holder .post-holder{
+    /* background: red; */
+    margin: 8vh;
+    width: 80vw;
+    height: 60vh;
+
+    border: 1px solid var(--text-muted);
+    border-radius: 20px;
+
+    display: flex; 
+    flex-direction: row;
+
+    padding: 20px;
+
+    background-image: var(--bg-surface);
+}
+
+.content .content-holder .post-holder .post-images{
+    /* background: blue; */
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.content .content-holder .post-holder .post-images img{
+    object-fit: cover;
+    height: 100%;
+}
+
+.content .content-holder .post-holder .post-texts{
+    /* background: green; */
+    width: 50%;
+    height: auto;
+
+    overflow: auto;
+}
+
+.content .content-holder .post-holder .post-texts p{
+    text-align: left;
+    color: var(--text-main);
+}
+
+
+
+@media (max-width: 650px){
+
+    #sidebar-toggle-btn{
+        display: flex;
+    }
+
+    .header{
+        height: auto;
+        width: 100%;
+    }
+
+    .header .topbar{
+        height: auto;
+        /* background: green; */
+    }
+
+    .header .topbar img{
+        height: 40px;
+    }
+
+    .header .topbar .topbar-mid{
+        font-size: 12pt;
+        display: flex;
+        flex-direction: column;
+        gap: 8vh;
+
+        background: var(--card-bg);
+    }
+
+    .header .topbar .topbar-mid{
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        height: 150vw;
+        width: 50vw;
+        justify-content: center;
+        align-items: center;
+        transition: 0.75s ease-out;
+
+        transition: right 0.3s ease-out;
+    }
+
+    .header .topbar .topbar-mid.show{
+        right: 0;
+    }
+
+    .rotate{
+        transform: translateY(20px);
+    }
+    
+    /* ####################################### */
+    .content{
+        padding: 1vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* background: red; */
+    }
+
+    .content .content-holder{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 10px;
+    }
+
+
+    .content .content-holder .post-holder{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: 90vw;
+    }
+
+    .content .content-holder .post-holder .post-texts{
+        width: 100%;
+    }
+
+    .content .content-holder .post-holder .post-images{
+        /* background: blue; */
+        padding: 0;
+        margin: 10px;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .content .content-holder .post-holder .post-images img{
+        object-fit: cover;
+        height: 100%;
+
+        border-radius: 20px;
+    }
+
+}

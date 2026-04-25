@@ -243,50 +243,62 @@ button:hover{
 
 
 /* POST.CSS */
+.content .content-holder{
+    height: auto;
+    width: auto;
 
-.gallery img {
-  width: 200px;
-  cursor: pointer;
-  transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.gallery img:hover { transform: scale(1.1); }
+.content .content-holder .post-holder{
+    /* background: red; */
+    margin: 8vh;
+    width: 80vw;
+    height: 60vh;
 
-.modal {
-    padding-top: 2vh;
-    display: none;
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0,0,0,0.8);
-    overflow-y: auto;
+    border: 1px solid var(--text-muted);
+    border-radius: 20px;
+
+    display: flex; 
+    flex-direction: row;
+
+    padding: 20px;
+
+    background-image: var(--bg-surface);
 }
 
-.modal img {
-    display:block;
-    margin: 50px auto 10px;
-    max-width: 40%;
+.content .content-holder .post-holder .post-images{
+    /* background: blue; */
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
 }
 
-#story {
-    max-height: 400px;
-    overflow-y: auto;   /* scrollable text */
-    color: white;
-    padding: 10px;
-    width: 80%;
-    margin: auto;
-
-    margin-bottom: 10vh;
+.content .content-holder .post-holder .post-images img{
+    object-fit: cover;
+    height: 100%;
 }
 
-.close {
-    position: fixed;
-    top: 150px;
-    right:130px;
-    color:white;
-    font-size:30px;
-    cursor:pointer;
+.content .content-holder .post-holder .post-texts{
+    /* background: green; */
+    width: 50%;
+    height: auto;
+
+    overflow: auto;
 }
+
+.content .content-holder .post-holder .post-texts p{
+    text-align: left;
+    color: var(--text-main);
+}
+
 
 
 @media (max-width: 650px){
@@ -359,6 +371,36 @@ button:hover{
         justify-content: center;
 
         gap: 10px;
+    }
+
+
+    .content .content-holder .post-holder{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: 90vw;
+    }
+
+    .content .content-holder .post-holder .post-texts{
+        width: 100%;
+    }
+
+    .content .content-holder .post-holder .post-images{
+        /* background: blue; */
+        padding: 0;
+        margin: 10px;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .content .content-holder .post-holder .post-images img{
+        object-fit: cover;
+        height: 100%;
+
+        border-radius: 20px;
     }
 
 }
